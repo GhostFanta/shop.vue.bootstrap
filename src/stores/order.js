@@ -2,11 +2,55 @@ import Vapi from "vuex-rest-api";
 
 const orders = new Vapi({
   baseURL: "http://localhost:3000"
-}).getStore();
+})
+  .get({
+    action: "getOrders",
+    property: "orders",
+    path: "/orders"
+  })
+  .get({
+    action: "getOrder",
+    property: "order",
+    path: ({ orderId }) => `/orders/${orderId}`
+  })
+  .get({
+    action: "getCart",
+    property: "cart",
+    path: ({ userId }) => `/cart/${userId}`
+  })
+  .post({
+    action: "addItemToCart",
+    property: "item",
+    path: ({ userId }) => `/cart/${userId}`
+  })
+  .patch({
+    action: "updateCart",
+    property: "cart",
+    path: ({ userId }) => `/cart/${userId}`
+  })
+  .delete({
+    action: "clearCart",
+    property: "item",
+    path: ({ userId }) => `/cart/${userId}`
+  })
+  .getStore();
+
+const state = {
+  orders: [],
+  order: {},
+  cart: []
+};
+
+const getters = {
+  cart: state => state.cart,
+  orders: state => state.orders,
+  order: state => state.order
+};
 
 export default {
   namespaced: true,
-  getters: { ...orders.getters },
+  state: { ...state, ...orders.state },
+  getters: { ...getters, ...orders.getters },
   mutations: { ...orders.mutations },
   actions: { ...orders.actions }
 };

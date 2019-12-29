@@ -1,0 +1,3 @@
+{
+  "/cart\\?userId=:id": "/cart/:id"
+}

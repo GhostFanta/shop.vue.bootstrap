@@ -4,28 +4,26 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-4">
-            <h4 class="text-primary">Shop.vue.bootstrap</h4>
+            <h4 class="text-primary">Ultimate Alex</h4>
             <p class="text-secondary">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Accusantium, tempora?
             </p>
           </div>
           <ul class="col-lg-4 links">
-            <h5>Links</h5>
-            <li class=""><a href="">Lorem ipsum.</a></li>
-            <li><a href="">Lorem ipsum.</a></li>
-            <li><a href="">Lorem ipsum.</a></li>
-            <li><a href="">Lorem ipsum.</a></li>
+            <h5>About Us</h5>
+            <li class=""><a href="">Our Story</a></li>
+            <li><a href="">Venue</a></li>
+            <li><a href="">Other</a></li>
           </ul>
           <ul class="col-lg-4 links">
-            <h5>Links</h5>
-            <li class=""><a href="">Lorem ipsum.</a></li>
-            <li><a href="">Lorem ipsum.</a></li>
-            <li><a href="">Lorem ipsum.</a></li>
-            <li><a href="">Lorem ipsum.</a></li>
+            <h5>Parters</h5>
+            <li class=""><a href="">UNIQLO</a></li>
+            <li><a href="">H.M</a></li>
+            <li><a href="">Zara</a></li>
           </ul>
         </div>
-        <small>Copyright &copy; shop.vue.bootstrap</small>
+        <small>Copyright &copy; ultimate.alex</small>
       </div>
     </footer>
   </div>

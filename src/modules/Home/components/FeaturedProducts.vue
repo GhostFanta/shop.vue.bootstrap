@@ -1,20 +1,30 @@
 <template>
   <div class="featured-products">
-    <hr />
-    <carousel pagination-padding="1" per-page="3" navigation-enabled="true">
-      <slide v-for="item in featuredProducts" :key="item.id">
-        <ScrollItem :item="item" />
-      </slide>
-    </carousel>
-    <hr />
+    <div v-if="pending.featuredProducts" class="d-flex justify-content-center">
+      <Spinner />
+    </div>
+    <div v-else>
+      <hr />
+      <carousel
+        :pagination-padding="1"
+        :per-page="3"
+        :navigation-enabled="true"
+      >
+        <slide v-for="item in featuredProducts" :key="item.id">
+          <ScrollItem :item="item" />
+        </slide>
+      </carousel>
+      <hr />
+    </div>
   </div>
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
 import ScrollItem from "./ScrollItem";
+import Spinner from "../../../components/Spinner";
 export default {
   name: "FeaturedProducts",
-  components: { ScrollItem },
+  components: { Spinner, ScrollItem },
   props: {
     products: { type: Array, default: () => [] }
   },
@@ -22,10 +32,10 @@ export default {
     await this.getFeaturedProducts();
   },
   computed: {
-    ...mapGetters("products", ["featuredProducts"])
+    ...mapGetters("product", ["featuredProducts", "pending"])
   },
   methods: {
-    ...mapActions("products", ["getFeaturedProducts"])
+    ...mapActions("product", ["getFeaturedProducts"])
   }
 };
 </script>

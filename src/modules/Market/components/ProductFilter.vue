@@ -1,5 +1,6 @@
 <template>
-  <div class="product-filter">
+  <div class="container product-filter">
+    <h2>Filters:</h2>
     <h5 class="text-secondary mb-4">Filter by Price</h5>
     <vue-slider
       :model="value"
@@ -11,14 +12,17 @@
     />
     <p>See products under $ {{ value }}</p>
     <h5 class="text-secondary">Filter by Tag</h5>
+    <Tags />
   </div>
 </template>
 <script>
 import VueSlider from "vue-slider-component";
+import Tags from "./Tags";
 export default {
   name: "ProductFilter",
   components: {
-    VueSlider
+    VueSlider,
+    Tags
   },
   props: {
     minValue: { type: Number, default: 0 },

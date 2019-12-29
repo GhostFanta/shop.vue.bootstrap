@@ -9,7 +9,7 @@ const productStore = new Vapi({
     path: "/products"
   })
   .get({
-    action: "getProductsById",
+    action: "getProductById",
     property: "productDetail",
     path: ({ productId }) => `/products/${productId}`
   })
@@ -27,6 +27,7 @@ const productStore = new Vapi({
   .getStore();
 
 const states = {
+  pending: null,
   products: [],
   productDetail: null,
   featuredProducts: []

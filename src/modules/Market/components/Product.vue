@@ -1,13 +1,22 @@
 <template>
   <div class="product">
-    <div class="card">
-      <img class="card-img-top" :src="product.img_source" alt="" />
+    <div class="card justify-content-center mb-2 mr-2">
+      <router-link :to="{ name: 'productDetail', params: { productId: product.id } }">
+        <img class="img-fluid card-img-top" :src="product.img_source" alt="" />
+      </router-link>
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">
-          {{ product.description }}
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="text-center">
+          <span class="text-dark  mr-3">Price: ${{ product.price }}</span>
         </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="product-btn-wrapper">
+          <router-link
+            class="btn btn-outline-dark"
+            :to="{ name: 'productDetail', params: { productId: product.id } }"
+          >
+            View Detail
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -20,4 +29,34 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.product {
+  height: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+  .card {
+    width: 18.1rem;
+
+    .card-title {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-img-top {
+      padding: 1px 1px 1px 1px;
+    }
+    .product-btn-wrapper {
+      display: block;
+      justify-content: center;
+      align-items: center !important;
+    }
+
+    .card-body {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+</style>
