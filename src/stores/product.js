@@ -24,6 +24,11 @@ const productStore = new Vapi({
     property: "featuredProducts",
     path: "/featuredProducts"
   })
+  .get({
+    action: "getProductTags",
+    property: "tags",
+    path: "/tags"
+  })
   .getStore();
 
 const states = {
@@ -42,7 +47,8 @@ const getters = {
   error: state => state.error,
   products: state => state.products,
   featuredProducts: state => state.featuredProducts,
-  productDetail: state => state.productDetail
+  productDetail: state => state.productDetail,
+  tags: state => state.tags
 };
 
 export default {

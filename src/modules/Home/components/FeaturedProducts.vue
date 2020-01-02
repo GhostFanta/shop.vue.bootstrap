@@ -1,7 +1,7 @@
 <template>
   <div class="featured-products">
     <div v-if="pending.featuredProducts" class="d-flex justify-content-center">
-      <Spinner />
+      <Spinner normal />
     </div>
     <div v-else>
       <hr />

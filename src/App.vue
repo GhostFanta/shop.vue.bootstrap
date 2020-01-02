@@ -2,7 +2,9 @@
   <div id="app">
     <Header />
     <fade-transition origin="center" mode="out-in" :duration="250">
-      <router-view />
+      <div class="content-wrapper">
+        <router-view />
+      </div>
     </fade-transition>
     <Footer />
   </div>
@@ -10,7 +12,7 @@
 
 <script>
 import "./assets/icons";
-import {FadeTransition} from 'vue2-transitions';
+import { FadeTransition } from "vue2-transitions";
 import Header from "./modules/Components/Header";
 import Footer from "./modules/Components/Footer";
 export default {
@@ -27,5 +29,10 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 #app {
   font-family: "Raleway", sans-serif;
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>

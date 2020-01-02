@@ -1,23 +1,38 @@
 <template>
   <div class="tags">
-    <button class="btn badge badge-pill badge-primary">Portrait</button>
-    <button class="btn badge badge-pill badge-secondary">Portrait</button>
-    <button class="btn badge badge-pill badge-success">Portrait</button>
-    <button class="btn badge badge-pill badge-danger">Portrait</button>
-    <button class="btn badge badge-pill badge-warning">Portrait</button>
-    <button class="btn badge badge-pill badge-info">Portrait</button>
-    <button class="btn badge badge-pill badge-light">Portrait</button>
-    <button class="btn badge badge-pill badge-dark">Portrait</button>
+    <div v-if="pending.tags">
+      <Spinner normal />
+    </div>
+    <div class="col-11" v-else>
+      <button
+        :key="tag"
+        v-for="tag in tags"
+        class="btn rounded badge badge-pill mr-1"
+      >
+        {{ tag }}
+      </button>
+    </div>
   </div>
 </template>
 <script>
+import { mapGetters, mapActions } from "vuex";
+import Spinner from "../../../components/Spinner";
 export default {
   name: "Tags",
-  props: {}
+  components: { Spinner },
+  computed: {
+    ...mapGetters("product", ["tags", "pending"])
+  },
+  created() {
+    this.getProductTags();
+  },
+  methods: {
+    ...mapActions("product", ["getProductTags", "getProducts"])
+  }
 };
 </script>
 <style lang="scss" scoped>
-  .tags > button {
-    margin: 0 2px 0 0;
-  }
+.tags > button {
+  margin: 0 2px 0 0;
+}
 </style>

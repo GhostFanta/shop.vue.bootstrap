@@ -3,6 +3,8 @@ import SvgIcon from "vue-svgicon";
 import VueCarousel from "vue-carousel";
 import VueSlider from "vue-slider-component";
 import VueResponsiveImage from "vue-responsive-image/src/plugin";
+import Notification from "vue-notification";
+import BootstrapVue from "bootstrap-vue";
 
 import App from "./App.vue";
 
@@ -19,6 +21,8 @@ Vue.use(SvgIcon, {
 Vue.use(VueCarousel);
 Vue.use(VueResponsiveImage);
 Vue.use("VueSlider", VueSlider);
+Vue.use(BootstrapVue);
+Vue.use(Notification);
 
 new Vue({
   router,

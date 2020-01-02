@@ -1,24 +1,38 @@
-# shop.vue.bootstrap
+# Ultimate Alex
 
-## Project setup
+#### Product Description:
+> Fully responsive online shop based on vue stack.
+
+## Idea
+
+
+## Demo
+Please click here for a live demo.
+
+## Tool Chain:
++ vue2 / vuex / vuex-rest-api / vue-router / bootstrap
+
+
+## Get started
+#### Project setup
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
+#### Run project in dev mode and start mock backend service
 ```
+npm run back
 npm run serve
 ```
-
-### Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 npm run build
 ```
-
-### Lints and fixes files
+#### Lints & fixes files
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Recompile SVG icons
+```
+npm run svg
+```

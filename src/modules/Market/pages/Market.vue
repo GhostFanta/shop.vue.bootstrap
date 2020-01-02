@@ -1,7 +1,7 @@
 <template>
   <div class="market">
     <div v-if="pending.products" class="d-flex justify-content-center">
-      <Spinner />
+      <Spinner normal />
     </div>
     <div v-else class="row">
       <div class="col-lg-8 col-md-8">
@@ -48,5 +48,13 @@ export default {
   top: 0;
   padding: 15px 0 0 20px;
   border-left: #6c757d solid 1px;
+}
+
+@media (max-width: 53em) {
+  .sticky-sidebar {
+    border-top: #6c757d solid 1px;
+    margin: 20px 0 40px 0;
+    border-left: none;
+  }
 }
 </style>

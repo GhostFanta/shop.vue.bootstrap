@@ -1,14 +1,19 @@
 <template>
   <div class="spinner">
-    <div />
-    <div />
-    <div />
-    <div />
+    <div :class="{ small: small, normal: normal, large: large }" />
+    <div :class="{ small: small, normal: normal, large: large }" />
+    <div :class="{ small: small, normal: normal, large: large }" />
+    <div :class="{ small: small, normal: normal, large: large }" />
   </div>
 </template>
 <script>
 export default {
-  name: "Spinner"
+  name: "Spinner",
+  props: {
+    small: { type: Boolean, default: false },
+    normal: { type: Boolean, default: false },
+    large: { type: Boolean, default: false }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -17,18 +22,35 @@ export default {
   position: relative;
   width: 80px;
   height: 80px;
+  margin: 30px;
+
+  .small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #0c5460;
+    border-color: #0c5460 transparent transparent transparent;
+  }
+  .normal {
+    width: 32px;
+    height: 32px;
+    border: 4px solid #0c5460;
+    border-color: #0c5460 transparent transparent transparent;
+  }
+  .large {
+    width: 64px;
+    height: 64px;
+    border: 8px solid #0c5460;
+    border-color: #0c5460 transparent transparent transparent;
+  }
 
   div {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
     margin: 8px;
-    border: 8px solid #0c5460;
+
     border-radius: 50%;
     animation: ringing 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #0c5460 transparent transparent transparent;
   }
 }
 

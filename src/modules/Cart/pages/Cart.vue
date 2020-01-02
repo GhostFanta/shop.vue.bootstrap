@@ -3,13 +3,13 @@
     <hr />
     <div class="row">
       <h3 class="text-dark mr-auto">My cart</h3>
-      <button class="btn btn-outline-success rounded">Continue Shopping</button>
+      <button class="btn btn-outline-success">Continue Shopping</button>
     </div>
     <hr />
     <CartItem :key="item.id" v-for="item in cart.cart" :item="item" />
     <hr />
     <p>SubTotal</p>
-    <button class="rounded btn btn-success float-right mb-5">Proceed</button>
+    <button class="btn btn-success float-right mb-5">Proceed</button>
   </div>
 </template>
 

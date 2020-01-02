@@ -1,7 +1,7 @@
 <template>
   <div class="product-detail justify-content-center container">
     <div v-if="pending.productDetail" class="d-flex justify-content-center">
-      <Spinner></Spinner>
+      <Spinner normal/>
     </div>
     <div v-else class="row">
       <div class="col-lg-4">
@@ -20,7 +20,10 @@
         </p>
 
         <div class="input-group">
-          <button class="btn btn-outline-dark btn-lg btn-square counter">
+          <button
+            class="btn btn-outline-dark btn-lg btn-square counter"
+            @click="clickMinus"
+          >
             <icon name="minus" width="12" height="12" />
           </button>
           <input
@@ -29,10 +32,14 @@
             step="1"
             max=""
             min="1"
-            :value="count"
+            readonly
+            v-model="count"
           />
-          <button class="btn btn-outline-dark btn-lg btn-square counter">
-            <icon name="plus" width="12" height="12" />
+          <button
+            class="btn btn-outline-dark btn-lg btn-square counter"
+            @click="clickPlus"
+          >
+            <span><icon name="plus" width="12" height="12"/></span>
           </button>
 
           <button
@@ -65,7 +72,15 @@ export default {
     });
   },
   methods: {
-    ...mapActions("product", ["getProductById"])
+    ...mapActions("product", ["getProductById"]),
+    clickPlus() {
+      this.count++;
+    },
+    clickMinus() {
+      if (this.count > 1) {
+        this.count--;
+      }
+    }
   }
 };
 </script>
@@ -81,50 +96,40 @@ export default {
     padding: 0 20px 0 0;
   }
 
-  .btn-square {
-    border-radius: 0;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-  }
-  .counter:hover {
-    svg {
-      fill: white;
-    }
-  }
-
-  .input-counter {
-    width: 48px;
-    border: 1px solid black;
-    text-align: center;
-  }
-
-  .btn-add-to-cart {
-    margin: 20px 0 20px 0;
-    border-radius: 0;
-  }
-
   .input-group {
     display: inline;
     clear: both;
     justify-content: center;
     align-items: center;
 
+    .btn-square {
+      border-radius: 0;
+      height: 29px;
+      justify-content: center;
+      align-items: center;
+      font-size: 29px;
+    }
+    .counter:hover {
+      svg {
+        fill: white;
+      }
+    }
+
+    .input-counter {
+      width: 47px;
+      border: 0px solid black;
+      text-align: center;
+    }
+
+    .btn-add-to-cart {
+      margin: 19px 0 20px 0;
+      border-radius: 0;
+    }
+
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
-    }
-
-    input textarea {
-      height: 34px;
-      width: 100px;
-      border: 1px solid #eeeeee;
-      box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 10px;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer">
     <footer class="py-4 bg-light text-white-50">
       <div class="container text-center">
         <div class="row">
@@ -34,6 +34,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.footer {
+  a {
+    text-decoration: none;
+  }
+}
 .links {
   list-style-type: none;
 }
