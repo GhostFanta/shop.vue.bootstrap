@@ -5,6 +5,7 @@ import VueSlider from "vue-slider-component";
 import VueResponsiveImage from "vue-responsive-image/src/plugin";
 import Notification from "vue-notification";
 import BootstrapVue from "bootstrap-vue";
+import VueSession from "vue-session/index.esm";
 
 import App from "./App.vue";
 
@@ -23,6 +24,9 @@ Vue.use(VueResponsiveImage);
 Vue.use("VueSlider", VueSlider);
 Vue.use(BootstrapVue);
 Vue.use(Notification);
+Vue.use(VueSession, {
+  persist: true
+});
 
 new Vue({
   router,
