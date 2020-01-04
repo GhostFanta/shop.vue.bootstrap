@@ -1,7 +1,7 @@
 <template>
   <div class="product-detail justify-content-center container">
     <div v-if="pending.productDetail" class="d-flex justify-content-center">
-      <Spinner normal/>
+      <Spinner normal />
     </div>
     <div v-else class="row">
       <div class="col-lg-4">
@@ -20,11 +20,8 @@
         </p>
 
         <div class="input-group">
-          <button
-            class="btn btn-outline-dark btn-lg btn-square counter"
-            @click="clickMinus"
-          >
-            <icon name="minus" width="12" height="12" />
+          <button class="btn btn-outline-dark" @click="clickMinus">
+            <i class="fa fa-minus"></i>
           </button>
           <input
             class="input-counter"
@@ -35,11 +32,8 @@
             readonly
             v-model="count"
           />
-          <button
-            class="btn btn-outline-dark btn-lg btn-square counter"
-            @click="clickPlus"
-          >
-            <span><icon name="plus" width="12" height="12"/></span>
+          <button class="btn btn-outline-dark" @click="clickPlus">
+            <i class="fa fa-plus"></i>
           </button>
 
           <button
@@ -85,6 +79,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 .product-detail {
   h3 {
     width: 100%;
@@ -119,6 +114,7 @@ export default {
       width: 47px;
       border: 0px solid black;
       text-align: center;
+      margin: 0 3px 0 3px;
     }
 
     .btn-add-to-cart {

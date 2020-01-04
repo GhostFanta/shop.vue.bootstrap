@@ -6,6 +6,10 @@ import VueResponsiveImage from "vue-responsive-image/src/plugin";
 import Notification from "vue-notification";
 import BootstrapVue from "bootstrap-vue";
 import VueSession from "vue-session/index.esm";
+import { ValidationProvider } from "vee-validate";
+import { extend } from "vee-validate";
+import * as rules from "vee-validate/dist/rules";
+import "@/utils/validationRules";
 
 import App from "./App.vue";
 
@@ -26,6 +30,10 @@ Vue.use(BootstrapVue);
 Vue.use(Notification);
 Vue.use(VueSession, {
   persist: true
+});
+Vue.component("ValidationProvider", ValidationProvider);
+Object.keys(rules).forEach(rule => {
+  extend(rule, rules[rule]);
 });
 
 new Vue({

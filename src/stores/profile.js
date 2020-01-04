@@ -36,6 +36,9 @@ const actions = {
   logout: () => {
     this.$session.destroy();
     this.$router.push("/");
+  },
+  register: (email, password) => {
+    this.$session.start();
   }
 };
 
