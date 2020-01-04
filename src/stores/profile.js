@@ -1,4 +1,5 @@
 import Vapi from "vuex-rest-api";
+import Vue from "vue";
 
 const profile = new Vapi({
   baseURL: "http://localhost:3000"
@@ -13,19 +14,24 @@ const state = {
 const mutations = {};
 
 const actions = {
-  login: ({ state }, email, password) => {
+  login: function({ state }, email, password) {
     state.pending.logging = true;
     if (email === "test@alex.me" && password === "123456") {
-      this.$session.start();
-      this.$session.set("jwt", "Bearer This is a test token");
-      this.$notify({
+      Vue.prototype.$session.start();
+      Vue.prototype.$session.set("jwt", "Bearer This is a test token");
+      Vue.prototype.$notify({
+        group: "auth",
+        type: "success",
         title: "Welcome back!",
         text: "Nice to see you again!"
       });
       state.pending.logging = false;
       this.$router.push("/");
     } else {
-      this.$notify({
+      Vue.prototype.$notify({
+        group: "auth",
+        position: "bottom right",
+        type: "error",
         title: "Login failed",
         text:
           "Error logging you in, please double check your email and password."

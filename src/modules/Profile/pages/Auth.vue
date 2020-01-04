@@ -51,7 +51,11 @@
         </b-form-group>
 
         <b-form-checkbox>Remember me</b-form-checkbox>
-        <button type="submit" class="btn btn-outline-success btn-block">
+        <button
+          type="submit"
+          class="btn btn-outline-success btn-block"
+          @click="handleLogin"
+        >
           Login
         </button>
       </div>
@@ -82,7 +86,7 @@
             v-slot="{ errors }"
           >
             <b-form-input
-              v-model="loginPassword"
+              v-model="signupPassword"
               type="password"
               placeholder="Password"
             />
@@ -99,7 +103,7 @@
             v-slot="{ errors }"
           >
             <b-form-input
-              v-model="loginPassword"
+              v-model="repeatPassword"
               type="password"
               placeholder="Password"
             />
@@ -139,7 +143,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions("profile", ["login"])
+    ...mapActions("profile", ["login"]),
+    handleLogin() {
+      this.login(this.loginEmail, this.loginPassword);
+
+    }
   }
 };
 </script>

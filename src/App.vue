@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <notifications group="auth" position="top center"/>
     <fade-transition origin="center" mode="out-in" :duration="250">
       <div class="content-wrapper">
         <router-view />
