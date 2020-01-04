@@ -14,11 +14,12 @@ const state = {
 const mutations = {};
 
 const actions = {
-  login: function({ state }, email, password) {
+  login: function({ state }, {email, password}) {
     state.pending.logging = true;
     if (email === "test@alex.me" && password === "123456") {
       Vue.prototype.$session.start();
       Vue.prototype.$session.set("jwt", "Bearer This is a test token");
+      Vue.prototype.$session.set("userId", "1");
       Vue.prototype.$notify({
         group: "auth",
         type: "success",
@@ -26,7 +27,6 @@ const actions = {
         text: "Nice to see you again!"
       });
       state.pending.logging = false;
-      this.$router.push("/");
     } else {
       Vue.prototype.$notify({
         group: "auth",
@@ -40,8 +40,7 @@ const actions = {
     }
   },
   logout: () => {
-    this.$session.destroy();
-    this.$router.push("/");
+    Vue.prototype.$session.destroy();
   },
   register: (email, password) => {
     this.$session.start();

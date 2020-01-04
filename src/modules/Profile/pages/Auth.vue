@@ -54,6 +54,7 @@
         <button
           type="submit"
           class="btn btn-outline-success btn-block"
+          :disabled="disableLogin"
           @click="handleLogin"
         >
           Login
@@ -110,7 +111,11 @@
             <span class="form-alert">{{ errors[0] }}</span>
           </ValidationProvider>
         </b-form-group>
-        <button type="submit" class="btn btn-outline-success btn-block">
+        <button
+          type="submit"
+          class="btn btn-outline-success btn-block"
+          :disabled="disableSignup"
+        >
           Submit
         </button>
       </div>
@@ -128,8 +133,7 @@ export default {
       loginPassword: "",
       signupEmail: "",
       signupPassword: "",
-      repeatPassword: "",
-      errors: []
+      repeatPassword: ""
     };
   },
   created() {},
@@ -144,9 +148,16 @@ export default {
   },
   methods: {
     ...mapActions("profile", ["login"]),
-    handleLogin() {
-      this.login(this.loginEmail, this.loginPassword);
+    async handleLogin() {
+      await this.login({
+        email: this.loginEmail,
+        password: this.loginPassword
+      });
 
+      if (this.$session.get("jwt")) {
+        this.$router.push("/");
+      }
+      location.reload();
     }
   }
 };

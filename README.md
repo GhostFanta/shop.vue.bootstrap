@@ -24,6 +24,8 @@ Please click here for a live demo.
     - [x] Form Validation
     - [x] Notification
 - [x] ShoppingCart
+    - [x] Add/Remove item.
+    - [x] Modify the amount of a product.
 - [x] Product Filtering(filtered by category, price, tags)
     - [x] Filter by Category
     - [x] Filter by Price

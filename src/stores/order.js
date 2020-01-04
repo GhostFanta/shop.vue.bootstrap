@@ -42,6 +42,7 @@ const state = {
 };
 
 const getters = {
+  pending: state => state.pending,
   cart: state => state.cart,
   orders: state => state.orders,
   order: state => state.order

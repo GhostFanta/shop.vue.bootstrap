@@ -31,7 +31,7 @@
             <icon name="magnifying-glass" width="12" height="12" />
           </button>
         </form>
-        <div v-if="this.$session.jwt" class="button-group-loggedin">
+        <div v-if="showUserBtns" class="button-group-loggedin">
           <router-link
             tag="button"
             to="/favorites"
@@ -48,11 +48,20 @@
           </router-link>
           <router-link
             tag="button"
-            to="/cart"
+            :to="{
+              name: 'Cart',
+              params: { userId: this.$session.get('userId') }
+            }"
             class="btn btn-outline-secondary rounded-circle m-1"
           >
             <icon name="shopping-card" width="11" height="12" />
           </router-link>
+          <button
+            class="btn btn-outline-danger rounded-circle ml-3"
+            @click="signout"
+          >
+            <icon class="header-logout" name="logout" width="11" height="12" />
+          </button>
         </div>
         <div v-else class="button-group-guest">
           <router-link
@@ -68,17 +77,23 @@
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "Header",
   data() {
-    return {};
+    return {
+      showUserBtns: this.$session.get("jwt")
+    };
   },
+  computed: {},
   methods: {
-
+    ...mapActions("profile", ["logout"]),
+    signout() {
+      this.logout();
+      location.reload();
+    }
   },
-  created() {
-    // window.addEventListener("scroll");
-  },
+  created() {},
   destroyed() {}
 };
 </script>
@@ -103,6 +118,9 @@ export default {
     }
     .header-portfolio {
       fill: #006bff;
+    }
+    .header-logout {
+      fill: red;
     }
     .btn:hover {
       svg {

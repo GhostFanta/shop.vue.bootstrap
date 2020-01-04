@@ -38,6 +38,7 @@
 
           <button
             class="btn-add-to-cart btn btn-outline-dark btn-lg float-right"
+            @click="addToCart"
           >
             Add to Cart
           </button>
@@ -67,6 +68,7 @@ export default {
   },
   methods: {
     ...mapActions("product", ["getProductById"]),
+    ...mapActions("order", ["addItemToCart"]),
     clickPlus() {
       this.count++;
     },
@@ -74,6 +76,9 @@ export default {
       if (this.count > 1) {
         this.count--;
       }
+    },
+    addToCart() {
+      this.addItemToCart()
     }
   }
 };
