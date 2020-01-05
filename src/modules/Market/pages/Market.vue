@@ -8,7 +8,11 @@
         <ProductList :products="displayedProducts" />
       </div>
       <div class="col-lg-4 col-md-4">
-        <ProductFilter class="sticky-sidebar" :min-value="0" :max-value="10" />
+        <ProductFilter
+          class="sticky-sidebar"
+          :min-value="minPrice"
+          :max-value="maxPrice"
+        />
       </div>
     </div>
   </div>
@@ -34,6 +38,18 @@ export default {
     ...mapGetters("product", ["products", "pending"]),
     displayedProducts() {
       return this.products;
+    },
+    minPrice() {
+      return this.products.reduce(
+        (min, current) => (min > current.price ? current.price : min),
+        this.products[0].price
+      );
+    },
+    maxPrice() {
+      return this.products.reduce(
+        (max, current) => (max < current.price ? current.price : max),
+        this.products[0].price
+      );
     }
   },
   methods: {

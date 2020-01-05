@@ -66,9 +66,19 @@ export default {
       params: { productId: this.$route.params.productId }
     });
   },
+  watch: {
+    pending(to) {
+      if (to) {
+        this.$notify({
+          group: "cart",
+          title: "New items are added to cart."
+        });
+      }
+    }
+  },
   methods: {
     ...mapActions("product", ["getProductById"]),
-    ...mapActions("order", ["addItemToCart"]),
+    ...mapActions("orders", ["addItemToCart"]),
     clickPlus() {
       this.count++;
     },
@@ -78,13 +88,20 @@ export default {
       }
     },
     addToCart() {
-      this.addItemToCart()
+      if (!this.$session.get("jwt")) {
+        this.$notify({
+          group: "auth",
+          type: "warning",
+          title: "Please login to proceed",
+          text: "You need to login to get access to your cart :)"
+        });
+      }
+      this.addItemToCart();
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 .product-detail {
   h3 {
     width: 100%;
