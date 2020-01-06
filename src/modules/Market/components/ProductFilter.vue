@@ -1,28 +1,31 @@
 <template>
   <div class="container product-filter">
-    <h2>Filters:</h2>
+<!--    <h2>Filters:</h2>-->
     <h5 class="text-secondary mb-4">Filter by Price</h5>
-    <vue-slider
-      :model="value"
+    <range-slider
+      class="slider"
+      v-model="value"
       :min="minValue"
       :max="maxValue"
       :height="10"
       :width="200"
       :process-dragable="true"
+      @change="handleChange"
     />
     <p>See products under $ {{ value }}</p>
-    <h5 class="text-secondary">Filter by Tag</h5>
+    <h5 class="text-secondary">Tags</h5>
     <Tags />
   </div>
 </template>
 <script>
-import VueSlider from "vue-slider-component";
 import Tags from "./Tags";
+import RangeSlider from "vue-range-slider";
+import "vue-range-slider/dist/vue-range-slider.css";
 export default {
   name: "ProductFilter",
   components: {
-    VueSlider,
-    Tags
+    Tags,
+    RangeSlider
   },
   props: {
     minValue: { type: Number, default: 0 },
@@ -30,10 +33,18 @@ export default {
   },
   data() {
     return {
-      value: 0
+      value: this.maxValue
     };
   },
-  computed: {}
+  methods: {
+    handleChange() {
+      this.$emit("change", this.value);
+    }
+  }
 };
 </script>
-<style></style>
+<style lang="scss" scoped>
+.slider {
+  width: 80%;
+}
+</style>

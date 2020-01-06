@@ -38,11 +38,13 @@ export default {
     },
     clickPlus() {
       this.item.amount += 1;
+      this.$emit("amountChange", this.item.amount);
     },
     clickMinus() {
       if (this.item.amount > 1) {
         this.item.amount -= 1;
       }
+      this.$emit("amountChange", this.item.amount);
     }
   }
 };

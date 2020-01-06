@@ -2,7 +2,7 @@
   <div class="header mb-5">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <router-link to="/home" class="navbar-brand">
-        <h3 class="text-info">Ultimate Alex</h3>
+        <h3 class="text-info">The Cart</h3>
       </router-link>
       <button
         class="navbar-toggler"
@@ -32,20 +32,20 @@
           </button>
         </form>
         <div v-if="showUserBtns" class="button-group-loggedin">
-          <router-link
-            tag="button"
-            to="/favorites"
-            class="btn btn-outline-danger rounded-circle m-1 "
-          >
-            <icon class="header-favorite" name="heart" width="11" height="12" />
-          </router-link>
-          <router-link
-            tag="button"
-            to="/profile"
-            class="btn btn-outline-primary rounded-circle m-1"
-          >
-            <icon class="header-portfolio" name="man" width="11" height="12" />
-          </router-link>
+          <!--          <router-link-->
+          <!--            tag="button"-->
+          <!--            to="/favorites"-->
+          <!--            class="btn btn-outline-danger rounded-circle m-1 "-->
+          <!--          >-->
+          <!--            <icon class="header-favorite" name="heart" width="11" height="12" />-->
+          <!--          </router-link>-->
+          <!--          <router-link-->
+          <!--            tag="button"-->
+          <!--            to="/profile"-->
+          <!--            class="btn btn-outline-primary rounded-circle m-1"-->
+          <!--          >-->
+          <!--            <icon class="header-portfolio" name="man" width="11" height="12" />-->
+          <!--          </router-link>-->
           <router-link
             tag="button"
             :to="{

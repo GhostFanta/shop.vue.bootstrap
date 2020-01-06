@@ -62,8 +62,8 @@ export default {
   watch: {
     cart(to) {
       let price = 0;
-      for (const item in to.cart) {
-        price += Number(item.price) * Number(item.amount);
+      for (let item in to.cart) {
+        price += Number(to.cart[item].price) * Number(to.cart[item].amount);
       }
       this.totalPrice = price;
     }

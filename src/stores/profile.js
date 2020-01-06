@@ -2,7 +2,7 @@ import Vapi from "vuex-rest-api";
 import Vue from "vue";
 
 const profile = new Vapi({
-  baseURL: "http://localhost:3000"
+  baseURL: "http://159.203.17.226:3000"
 }).getStore();
 
 const state = {
@@ -14,7 +14,7 @@ const state = {
 const mutations = {};
 
 const actions = {
-  login: function({ state }, {email, password}) {
+  login: function({ state }, { email, password }) {
     state.pending.logging = true;
     if (email === "test@alex.me" && password === "123456") {
       Vue.prototype.$session.start();

@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     ...mapActions("product", ["getProductById"]),
-    ...mapActions("orders", ["addItemToCart"]),
+    ...mapActions("order", ["addItemToCart"]),
     clickPlus() {
       this.count++;
     },
@@ -87,7 +87,7 @@ export default {
         this.count--;
       }
     },
-    addToCart() {
+    async addToCart() {
       if (!this.$session.get("jwt")) {
         this.$notify({
           group: "auth",
@@ -95,8 +95,21 @@ export default {
           title: "Please login to proceed",
           text: "You need to login to get access to your cart :)"
         });
+      } else {
+        await this.addItemToCart({
+          params: { userId: this.$session.get("userId") },
+          data: {
+            productId: this.productDetail.id,
+            amount: this.count
+          }
+        });
+        this.$notify({
+          group: "cart",
+          type: "success",
+          title: "Added to Cart",
+          text: "Your choices have been added to cart."
+        });
       }
-      this.addItemToCart();
     }
   }
 };

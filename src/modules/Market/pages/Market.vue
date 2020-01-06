@@ -12,6 +12,7 @@
           class="sticky-sidebar"
           :min-value="minPrice"
           :max-value="maxPrice"
+          @change="handleChange"
         />
       </div>
     </div>
@@ -22,6 +23,7 @@ import { mapGetters, mapActions } from "vuex";
 import ProductList from "../components/ProductList";
 import ProductFilter from "../components/ProductFilter";
 import Spinner from "../../../components/Spinner";
+
 export default {
   name: "Market",
   components: { Spinner, ProductFilter, ProductList },
@@ -34,10 +36,19 @@ export default {
     }
     await this.getProducts();
   },
+  data() {
+    return {
+      filterCurrentVal: Number.MAX_SAFE_INTEGER
+    };
+  },
   computed: {
     ...mapGetters("product", ["products", "pending"]),
     displayedProducts() {
-      return this.products;
+      return this.products.filter(item => {
+        if (item.price < this.filterCurrentVal) {
+          return item;
+        }
+      });
     },
     minPrice() {
       return this.products.reduce(
@@ -53,7 +64,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions("product", ["getProducts"])
+    ...mapActions("product", ["getProducts"]),
+    handleChange(val) {
+      this.filterCurrentVal = val;
+    }
   }
 };
 </script>

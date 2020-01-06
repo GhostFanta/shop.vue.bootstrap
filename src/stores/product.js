@@ -1,7 +1,7 @@
 import Vapi from "vuex-rest-api";
 
 const productStore = new Vapi({
-  baseURL: "http://localhost:3000"
+  baseURL: "http://159.203.17.226:3000"
 })
   .get({
     action: "getProducts",

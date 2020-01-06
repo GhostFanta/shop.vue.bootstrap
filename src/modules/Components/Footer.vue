@@ -4,7 +4,7 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-4">
-            <h4 class="text-primary">Ultimate Alex</h4>
+            <h4 class="text-primary">The Cart</h4>
             <p class="text-secondary">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Accusantium, tempora?
@@ -23,7 +23,7 @@
             <li><a href="">Zara</a></li>
           </ul>
         </div>
-        <small>Copyright &copy; ultimate.alex</small>
+        <small>Copyright &copy; the-cart</small>
       </div>
     </footer>
   </div>
