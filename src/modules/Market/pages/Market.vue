@@ -45,7 +45,7 @@ export default {
     ...mapGetters("product", ["products", "pending"]),
     displayedProducts() {
       return this.products.filter(item => {
-        if (item.price < this.filterCurrentVal) {
+        if (item.price <= this.filterCurrentVal) {
           return item;
         }
       });
