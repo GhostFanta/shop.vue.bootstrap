@@ -1,7 +1,7 @@
 import Vapi from "vuex-rest-api";
 
 const orders = new Vapi({
-  baseURL: "http://159.203.17.226:3000"
+  baseURL: "https://159.203.17.226:443"
 })
   .get({
     action: "getOrders",

@@ -1,4 +1,5 @@
 # The Cart
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f1c4b271-f167-4e3a-93bf-48c08878a610/deploy-status)](https://app.netlify.com/sites/shop-zc/deploys)
 
 #### Product Description:
@@ -7,7 +8,7 @@
 
 ## Demo
 
-Please click here for a live demo.
+Please click [here](https://shop-zc.netlify.com/home) for a live demo.
 
 ## Tool Chain:
 
@@ -21,17 +22,17 @@ Please click here for a live demo.
 
 ## Features:
 
-- [x] Login/Signup Form. 
-    - [x] Form Validation
-    - [x] Notification
+- [x] Login/Signup Form.
+  - [x] Form Validation
+  - [x] Notification
 - [x] ShoppingCart
-    - [x] Add/Remove item.
-    - [x] Modify the amount of a product.
+  - [ ] Add/Remove item.
+  - [ ] Modify the amount of a product.
 - [x] Product Filtering(filtered by category, price, tags)
-    - [x] Filter by Category
-    - [x] Filter by Price
-    - [x] Filter by Tags
-- [x] Advanced Product Search
+  - [x] Filter by Category
+  - [x] Filter by Price
+  - [ ] Filter by Tags
+- [ ] Advanced Product Search
 
 ## Get started
 
