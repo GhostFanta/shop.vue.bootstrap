@@ -42,7 +42,7 @@ const actions = {
   logout: () => {
     Vue.prototype.$session.destroy();
   },
-  register: (email, password) => {
+  register: () => {
     this.$session.start();
   }
 };

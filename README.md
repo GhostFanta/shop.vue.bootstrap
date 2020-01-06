@@ -1,4 +1,5 @@
 # The Cart
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1c4b271-f167-4e3a-93bf-48c08878a610/deploy-status)](https://app.netlify.com/sites/shop-zc/deploys)
 
 #### Product Description:
 
