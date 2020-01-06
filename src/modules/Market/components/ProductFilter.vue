@@ -2,7 +2,7 @@
   <div class="container product-filter">
 <!--    <h2>Filters:</h2>-->
     <h5 class="text-secondary mb-4">Filter by Price</h5>
-    <range-slider
+    <vue-range-slider
       class="slider"
       v-model="value"
       :min="minValue"
@@ -19,13 +19,10 @@
 </template>
 <script>
 import Tags from "./Tags";
-import RangeSlider from "vue-range-slider";
-import "vue-range-slider/dist/vue-range-slider.css";
 export default {
   name: "ProductFilter",
   components: {
     Tags,
-    RangeSlider
   },
   props: {
     minValue: { type: Number, default: 0 },

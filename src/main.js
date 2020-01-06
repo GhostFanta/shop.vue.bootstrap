@@ -9,6 +9,8 @@ import { ValidationProvider } from "vee-validate";
 import { extend } from "vee-validate";
 import * as rules from "vee-validate/dist/rules";
 import "@/utils/validationRules";
+import VueRangeSlider from "vue-range-slider";
+import "vue-range-slider/dist/vue-range-slider.css";
 
 import App from "./App.vue";
 
@@ -29,6 +31,7 @@ Vue.use(VueSession, {
   persist: true
 });
 Vue.component("ValidationProvider", ValidationProvider);
+Vue.component("vue-range-slider", VueRangeSlider);
 Object.keys(rules).forEach(rule => {
   extend(rule, rules[rule]);
 });

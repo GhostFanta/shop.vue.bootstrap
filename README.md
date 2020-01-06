@@ -9,6 +9,8 @@
 ## Demo
 
 Please click [here](https://shop-zc.netlify.com/home) for a live demo.
+(Click 'Back to our site' since ssl encrypted API is still under development.)
+use Email: test@alex.me Password:123456 to login.
 
 ## Tool Chain:
 

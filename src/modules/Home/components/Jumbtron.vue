@@ -1,5 +1,5 @@
 <template>
-  <div class="container jumbotron bg-transparent">
+  <div class="jumbotron bg-transparent">
     <h1 class="display-4">Here comes the deal!</h1>
     <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, rem.

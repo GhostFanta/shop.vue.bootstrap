@@ -1,6 +1,6 @@
 <template>
   <div class="header mb-5">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <router-link to="/home" class="navbar-brand">
         <h3 class="text-info">The Cart</h3>
       </router-link>
