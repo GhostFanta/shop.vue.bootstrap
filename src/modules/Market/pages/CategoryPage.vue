@@ -1,13 +1,11 @@
 <template>
-  <div class="category-page z-container">
+  <div class="category-page z-container mb-5">
     <div class="category-row">
       <div class="category-col">
         <div class="link-container">
           <router-link :to="{ path: '/market' }">
             <img
-              :src="
-                'https://i.ibb.co/dDrKmzW/resize-2020-1-8.jpg'
-              "
+              :src="'https://i.ibb.co/dDrKmzW/resize-2020-1-8.jpg'"
               class="img-fluid"
             />
             <h3 class="text-left text-dark">All Stylish Clothes</h3>
@@ -98,7 +96,7 @@ export default {
     grid-template-columns: repeat(3, 4fr);
   }
 
-  .category-row div:nth-child(0){
+  .category-row div:nth-child(0) {
     grid-row: 1/2;
     grid-column: 0/1;
   }
