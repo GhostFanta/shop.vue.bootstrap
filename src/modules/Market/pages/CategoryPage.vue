@@ -1,48 +1,63 @@
 <template>
-  <div class="category-page container">
-    <div class="row panel-all">
-      <div class="col-5 mr-4">
-        <router-link :to="{ path: '/market' }">
-          <img
-            :src="'https://i.ibb.co/dDNCP99/resize-2019-12-12-4.jpg'"
-            class="img-fluid"
-          />
-          <h3 class="text-left text-info">All Stylish Clothes</h3>
-        </router-link>
-        <router-link :to="{ path: '/market' }">
-          <img
-            :src="'https://i.ibb.co/GVrFL4v/resize-2019-12-12-5.jpg'"
-            class="img-fluid"
-          />
-          <h3 class="text-left text-secondary">Accessories</h3>
-        </router-link>
+  <div class="category-page z-container">
+    <div class="category-row">
+      <div class="category-col">
+        <div class="link-container">
+          <router-link :to="{ path: '/market' }">
+            <img
+              :src="
+                'https://i.ibb.co/dDrKmzW/resize-2020-1-8.jpg'
+              "
+              class="img-fluid"
+            />
+            <h3 class="text-left text-dark">All Stylish Clothes</h3>
+          </router-link>
+        </div>
+        <div class="link-container">
+          <router-link :to="{ path: '/market' }">
+            <img
+              :src="'https://i.ibb.co/QJxZPYT/resize-2020-1-8.jpg'"
+              class="img-fluid"
+            />
+            <h3 class="text-left text-dark">Accessories</h3>
+          </router-link>
+        </div>
       </div>
-      <div class="col-6">
-        <div class="row panel-men ">
+      <div class="category-col">
+        <div class="link-container panel-men">
           <router-link :to="{ path: '/market', query: { category: 'men' } }">
             <img
               :src="'https://i.ibb.co/Zm7GBMJ/resize-2019-12-12-2.jpg'"
               class="img-fluid"
             />
-            <h3 class="text-right text-primary">Men</h3>
+            <h3 class="text-right text-light">Men</h3>
           </router-link>
         </div>
-        <div class="row panel-women">
+        <div class="link-container panel-women">
           <router-link :to="{ path: '/market', query: { category: 'women' } }">
             <img
               :src="'https://i.ibb.co/R0wHL76/resize-2019-12-12-1.jpg'"
               class="img-fluid"
             />
-            <h3 class="text-right text-danger">Women</h3>
+            <h3 class="text-right text-dark">Women</h3>
           </router-link>
         </div>
-        <div class="row panel-kids">
+      </div>
+      <div class="category-col">
+        <div class="link-container panel-kids">
           <router-link :to="{ path: '/market', query: { category: 'kids' } }">
             <img
               :src="'https://i.ibb.co/5jPxXNY/resize-2019-12-12-3.jpg'"
               class="img-fluid"
             />
-            <h3 class="text-right text-dark">Kids</h3>
+            <h3 class="text-right text-light">Kids</h3>
+          </router-link>
+        </div>
+
+        <div class="link-container panel-babies">
+          <router-link :to="{ path: '/market', query: { category: 'babies' } }">
+            <img :src="'https://i.ibb.co/BymD9Tq/baby.jpg'" class="img-fluid" />
+            <h3 class="text-right text-dark">Babies</h3>
           </router-link>
         </div>
       </div>
@@ -56,45 +71,49 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.panel-men {
-  color: white;
-}
-.panel-men > h2 {
-  float: right;
-}
-
-.panel-all {
+.category-page {
   a {
     text-decoration: none;
   }
-}
-
-.panel-men {
-  a {
-    text-decoration: none;
+  .category-col {
+    padding: 5px;
+    img {
+      margin-top: 12px;
+    }
+    .link-container {
+      position: relative;
+      margin: 5px;
+      h3 {
+        font-size: 18px;
+        position: absolute;
+        top: 15px;
+        left: 10px;
+      }
+    }
   }
 
-  img {
-    max-width: 400px;
-  }
-}
-
-.panel-women {
-  a {
-    text-decoration: none;
+  .category-row {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 4fr);
   }
 
-  img {
-    max-width: 400px;
-  }
-}
-.panel-kids {
-  a {
-    text-decoration: none;
+  .category-row div:nth-child(0){
+    grid-row: 1/2;
+    grid-column: 0/1;
   }
 
-  img {
-    max-width: 400px;
+  .category-row div:nth-child(1) {
+    grid-column: 1/2;
+  }
+  .category-row div:nth-child(2) {
+    grid-column: 2/3;
+  }
+
+  .category-row .category-row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 }
 </style>

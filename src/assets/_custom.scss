@@ -1,7 +1,29 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .btn {
   border-radius: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
+}
+
+.z-container {
+  max-width: 1500px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
 }

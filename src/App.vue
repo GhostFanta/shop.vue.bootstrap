@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <notifications group="auth" position="top center"/>
-    <notifications group="cart" position="top center"/>
+    <notifications group="auth" position="top center" />
+    <notifications group="cart" position="top center" />
     <fade-transition origin="center" mode="out-in" :duration="250">
       <div class="content-wrapper">
         <router-view />
@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 #app {
@@ -36,6 +36,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 }
 </style>
