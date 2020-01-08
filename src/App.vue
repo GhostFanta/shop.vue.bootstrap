@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <notifications group="auth" position="top center"/>
-    <notifications group="cart" position="top center"/>
+    <notifications group="auth" position="top center" />
+    <notifications group="cart" position="top center" />
     <fade-transition origin="center" mode="out-in" :duration="250">
       <div class="content-wrapper">
         <router-view />
@@ -36,6 +36,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 }
 </style>

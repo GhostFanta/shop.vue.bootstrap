@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="z-container">
     <HomeJumbtron />
     <h1 class="text-secondary">Featured Products</h1>
     <FeaturedProducts />

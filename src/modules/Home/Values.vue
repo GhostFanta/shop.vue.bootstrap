@@ -37,10 +37,12 @@ export default {
     border-style: solid;
     border-width: 0 5px 0 5px;
   }
-  @media (max-width: 53em) {
+  @media (max-width: 48.5em) {
     .value-middle {
       border-style: solid;
       border-width: 5px 0 5px 0;
+      margin: 10px 0 10px 0;
+      padding: 10px 0 0 0;
     }
   }
 }

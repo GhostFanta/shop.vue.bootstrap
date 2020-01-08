@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f1c4b271-f167-4e3a-93bf-48c08878a610/deploy-status)](https://app.netlify.com/sites/shop-zc/deploys)
 
-#### Product Description:
+#### Product Brief Description:
 
 > Fully responsive online shop based on vue stack.
 
@@ -10,7 +10,16 @@
 
 Please click [here](https://shop-zc.netlify.com/home) for a live demo.
 (Click 'Back to our site' since ssl encrypted API is still under development.)
-use Email: test@alex.me Password:123456 to login.
+use
+
+```
+{
+    Email: test@alex.me,
+    Password:123456
+}
+```
+
+to login.
 
 ## Tool Chain:
 
