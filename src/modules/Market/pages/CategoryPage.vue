@@ -12,7 +12,7 @@
           </router-link>
         </div>
         <div class="link-container">
-          <router-link :to="{ path: '/market' }">
+          <router-link :to="{ path: '/market?category=accessories' }">
             <img
               :src="'https://i.ibb.co/QJxZPYT/resize-2020-1-8.jpg'"
               class="img-fluid"
@@ -23,7 +23,7 @@
       </div>
       <div class="category-col">
         <div class="link-container panel-men">
-          <router-link :to="{ path: '/market', query: { category: 'men' } }">
+          <router-link :to="{ path: '/market?category=men', query: { category: 'men' } }">
             <img
               :src="'https://i.ibb.co/Zm7GBMJ/resize-2019-12-12-2.jpg'"
               class="img-fluid"
@@ -32,7 +32,7 @@
           </router-link>
         </div>
         <div class="link-container panel-women">
-          <router-link :to="{ path: '/market', query: { category: 'women' } }">
+          <router-link :to="{ path: '/market?category=women', query: { category: 'women' } }">
             <img
               :src="'https://i.ibb.co/R0wHL76/resize-2019-12-12-1.jpg'"
               class="img-fluid"
@@ -43,7 +43,7 @@
       </div>
       <div class="category-col">
         <div class="link-container panel-kids">
-          <router-link :to="{ path: '/market', query: { category: 'kids' } }">
+          <router-link :to="{ path: '/market?category=kids', query: { category: 'kids' } }">
             <img
               :src="'https://i.ibb.co/5jPxXNY/resize-2019-12-12-3.jpg'"
               class="img-fluid"
@@ -53,7 +53,7 @@
         </div>
 
         <div class="link-container panel-babies">
-          <router-link :to="{ path: '/market', query: { category: 'babies' } }">
+          <router-link :to="{ path: '/market?category=babies', query: { category: 'babies' } }">
             <img :src="'https://i.ibb.co/BymD9Tq/baby.jpg'" class="img-fluid" />
             <h3 class="text-right text-dark">Babies</h3>
           </router-link>

@@ -295,6 +295,65 @@
         "mollit",
         "quis"
       ]
+    },
+    {
+      "id": 18,
+      "name": "Crocs",
+      "price": 37,
+      "img_source": "https://i.ibb.co/pRZPzyf/crocs-PNG33.jpg",
+      "produced_at": "2019-07-07T06:26:43 +04:00",
+      "rating": 1,
+      "description": "Eiusmod eu fugiat veniam ad consectetur. Sit irure nostrud proident duis dolore anim. In nulla fugiat reprehenderit consectetur enim. Magna irure sit ex ex adipisicing esse ad cillum magna fugiat dolore aliqua.\r\nPariatur duis sint officia elit ex sint adipisicing. Incididunt officia exercitation minim eu. Deserunt labore culpa fugiat ea labore esse deserunt velit cupidatat exercitation cillum. Laborum fugiat pariatur duis labore reprehenderit est aliqua ipsum magna. Deserunt enim eiusmod consequat cupidatat enim exercitation nostrud. \r\n",
+      "capacity": 87,
+      "category": "babies",
+      "tags": [
+        "laborum",
+        "nostrud",
+        "sunt",
+        "nostrud",
+        "officia",
+        "mollit",
+        "quis"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Blue Glove",
+      "price": 37,
+      "img_source": "https://i.ibb.co/JRg13XN/gloves-PNG80372.jpg",
+      "produced_at": "2019-07-07T06:26:43 +04:00",
+      "rating": 1,
+      "description": "Eiusmod eu fugiat veniam ad consectetur. Sit irure nostrud proident duis dolore anim. In nulla fugiat reprehenderit consectetur enim. Magna irure sit ex ex adipisicing esse ad cillum magna fugiat dolore aliqua.\r\nPariatur duis sint officia elit ex sint adipisicing. Incididunt officia exercitation minim eu. Deserunt labore culpa fugiat ea labore esse deserunt velit cupidatat exercitation cillum. Laborum fugiat pariatur duis labore reprehenderit est aliqua ipsum magna. Deserunt enim eiusmod consequat cupidatat enim exercitation nostrud. \r\n",
+      "capacity": 87,
+      "category": "babies",
+      "tags": [
+        "laborum",
+        "nostrud",
+        "sunt",
+        "nostrud",
+        "officia",
+        "mollit",
+        "quis"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "The legging",
+      "price": 37,
+      "img_source": "https://i.ibb.co/MBFRWJj/leggings-PNG68.jpg",
+      "produced_at": "2019-07-07T06:26:43 +04:00",
+      "rating": 1,
+      "description": "Eiusmod eu fugiat veniam ad consectetur. Sit irure nostrud proident duis dolore anim. In nulla fugiat reprehenderit consectetur enim. Magna irure sit ex ex adipisicing esse ad cillum magna fugiat dolore aliqua.\r\nPariatur duis sint officia elit ex sint adipisicing. Incididunt officia exercitation minim eu. Deserunt labore culpa fugiat ea labore esse deserunt velit cupidatat exercitation cillum. Laborum fugiat pariatur duis labore reprehenderit est aliqua ipsum magna. Deserunt enim eiusmod consequat cupidatat enim exercitation nostrud. \r\n",
+      "capacity": 87,
+      "category": "women",
+      "tags": [
+        "laborum",
+        "nostrud",
+        "nostrud",
+        "officia",
+        "mollit",
+        "quis"
+      ]
     }
   ],
   "featuredProducts": [
