@@ -2,7 +2,7 @@ import Vapi from "vuex-rest-api";
 import Vue from "vue";
 
 const profile = new Vapi({
-  baseURL: "https://159.203.17.226:443"
+  baseURL: "http://159.203.17.226:3002"
 }).getStore();
 
 const state = {
