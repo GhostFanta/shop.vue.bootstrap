@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "svg": "vsvg -s ./src/assets/static/svg/src/Medium -t ./src/assets/icons",
     "lint": "vue-cli-service lint; prettier-eslint \\\"src/modules\\\" --write",
-    "back": "json-server --delay 1000 --watch ./src/data/db.json --routes ./src/data/routes.json"
+    "back": "nodemon server/app.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -18,7 +18,9 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
+    "nodemon": "^2.0.2",
     "nouislider": "^14.1.0",
+    "path": "^0.12.7",
     "popper.js": "^1.16.0",
     "postcss-loader": "^3.0.0",
     "prettier-eslint": "^9.0.1",
