@@ -14,7 +14,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   height: 50px;
   display: flex;
