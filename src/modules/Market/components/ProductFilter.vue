@@ -1,9 +1,9 @@
 <template>
   <div class="container product-filter">
-<!--    <h2>Filters:</h2>-->
+    <!--    <h2>Filters:</h2>-->
     <h5 class="text-secondary mb-4">Filter by Price</h5>
     <vue-range-slider
-      class="slider"
+      class="slider "
       v-model="value"
       :min="minValue"
       :max="maxValue"
@@ -22,7 +22,7 @@ import Tags from "./Tags";
 export default {
   name: "ProductFilter",
   components: {
-    Tags,
+    Tags
   },
   props: {
     minValue: { type: Number, default: 0 },
@@ -43,5 +43,8 @@ export default {
 <style lang="scss" scoped>
 .slider {
   width: 80%;
+  .range-slider-fill {
+    background-color: #007bff;
+  }
 }
 </style>

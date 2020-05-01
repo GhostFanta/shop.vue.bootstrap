@@ -77,7 +77,7 @@ export default {
   position: sticky;
   top: 0;
   padding: 15px 0 0 20px;
-  border-left: #6c757d solid 1px;
+  /*border-left: #6c757d solid 1px;*/
 }
 
 @media (max-width: 53em) {

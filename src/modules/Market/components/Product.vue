@@ -1,7 +1,9 @@
 <template>
   <div class="product">
     <div class="card justify-content-center mb-2 mr-2">
-      <router-link :to="{ name: 'productDetail', params: { productId: product.id } }">
+      <router-link
+        :to="{ name: 'productDetail', params: { productId: product.id } }"
+      >
         <img class="img-fluid card-img-top" :src="product.img_source" alt="" />
       </router-link>
       <div class="card-body">
@@ -38,6 +40,11 @@ export default {
 
   .card {
     width: 18.1rem;
+    &:hover {
+      box-shadow: 2px 2px 10px 0px rgba(46, 61, 73, 0.2);
+      border: 1px solid deepskyblue;
+      transition: 0.2s;
+    }
 
     .card-title {
       justify-content: center;
